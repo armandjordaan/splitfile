@@ -44,6 +44,8 @@ fn split_file(filename: &String, lines: u32, skip_first: bool) -> io::Result<()>
     // Create a buffered writer to write to the file
     let mut writer = BufWriter::new(file);
 
+    println!("Opening file: {}", filename);
+
     for line in my_reader::BufReader::open(filename)? {
         if cur_line == 0 && skip_first {
             // skip the first line
